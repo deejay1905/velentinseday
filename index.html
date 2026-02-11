@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Dich ❤️</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+}
+
+header{
+padding:60px 20px;
+}
+
+h1{
+font-size:3em;
+margin-bottom:10px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px;
+}
+
+.card{
+width:250px;
+height:250px;
+background:white;
+color:black;
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+height:70%;
+object-fit:cover;
+}
+
+.card p{
+padding:10px;
+font-weight:bold;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal-content{
+background:white;
+color:black;
+padding:30px;
+border-radius:15px;
+max-width:400px;
+}
+
+button{
+padding:10px 20px;
+border:none;
+background:#ff4d6d;
+color:white;
+border-radius:10px;
+cursor:pointer;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Alles Gute zum Valentinstag ❤️</h1>
+<p>Für den schönsten Menschen in meinem Leben</p>
+</header>
+
+<div class="container">
+
+<div class="card" onclick="openModal('msg1')">
+<img src="https://picsum.photos/300?1">
+<p>Unsere Erinnerungen</p>
+</div>
+
+<div class="card" onclick="openModal('msg2')">
+<img src="https://picsum.photos/300?2">
+<p>Warum ich dich liebe</p>
+</div>
+
+<div class="card" onclick="openModal('msg3')">
+<img src="https://picsum.photos/300?3">
+<p>Unsere Zukunft</p>
+</div>
+
+</div>
+
+<div id="modal" class="modal">
+<div class="modal-content">
+<p id="modalText"></p>
+<button onclick="closeModal()">Schließen ❤️</button>
+</div>
+</div>
+
+<script>
+const messages={
+msg1:"Jeder Moment mit dir ist mein Lieblingsmoment ❤️",
+msg2:"Dein Lächeln, deine Art und dein Herz machen mich glücklich.",
+msg3:"Ich freue mich auf alles, was noch mit dir kommt 💕"
+};
+
+function openModal(key){
+document.getElementById("modalText").innerText=messages[key];
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
